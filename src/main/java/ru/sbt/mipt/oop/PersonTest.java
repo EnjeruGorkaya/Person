@@ -38,6 +38,17 @@ public class PersonTest {
         assertFalse(Jane.marry(Mary));
     }
 
-
+    @Test
+    public void marryTwoPairse() throws Exception {
+        Person Mary = new Person(false, "Mary");
+        Person Jane = new Person(false, "Jane");
+        Person John = new Person(true, "John");
+        Person Peter = new Person(true, "Peter");
+        assertTrue(Peter.marry(Mary));
+        assertTrue(John.marry(Jane));
+        assertTrue(John.marry(Mary));
+        System.out.println(John.areYouMarried());
+        System.out.println(Peter.areYouMarried());
+    }
 
 }

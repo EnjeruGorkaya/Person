@@ -7,11 +7,8 @@ package main.java.ru.sbt.mipt.oop;
 public class Person {
 
     private boolean man; // man - true, woman - false
-
     private String name;
-
     private Person spouse;
-
 
     public Person(boolean man, String name) {
         this.man = man;
@@ -24,7 +21,7 @@ public class Person {
 
     public String areYouMarried () {
         if (this.spouse != null) {
-            return "Yes, this is " + this.spouse;
+            return "Yes, this is " + this.spouse.sayName();
         } else {
             return "No, I'm alone";
         }
@@ -38,7 +35,7 @@ public class Person {
      */
 
     public boolean marry(Person person) {
-        if (this.man != person.man) {
+        if (this.man != person.man && this.spouse != person) {
             if (this.spouse != null) {
                 this.divorce();
             }
